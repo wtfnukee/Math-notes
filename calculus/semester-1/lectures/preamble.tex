@@ -70,12 +70,13 @@
 
 % si unitx
 \usepackage{siunitx}
-\sisetup{locale = FR}
+\sisetup{locale = FR} %FIXME
 % \renewcommand\vec[1]{\mathbf{#1}}
 \newcommand\mat[1]{\mathbf{#1}}
 
 
 % tikz
+% FIXME: Conflicts with todonotes (xkeyval errors)
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{intersections, angles, quotes, calc, positioning}
@@ -263,9 +264,8 @@
 
 
 % notes
-%\usepackage{todonotes}
-%%%
-%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]%{#2}}
 %\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 %\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
 %\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
@@ -274,11 +274,11 @@
 \usepackage{tcolorbox}
 
 \tcbuselibrary{breakable}
-\newenvironment{verbetering}{\begin{tcolorbox}[
+\newenvironment{boxnote}{\begin{tcolorbox}[
     arc=0mm,
     colback=white,
     colframe=green!60!black,
-    title=Opmerking,
+    title=Замечание,
     fonttitle=\sffamily,
     breakable
 ]}{\end{tcolorbox}}
