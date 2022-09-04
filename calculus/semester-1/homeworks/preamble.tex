@@ -20,6 +20,10 @@
 \usepackage{subcaption}
 \usepackage{multicol}
 \usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+
+% sagemath
+\usepackage{sagetex} 
 
 % \usepackage{cmbright}
 
@@ -46,9 +50,6 @@
 % \let\phi\varphi
 
 
-
-
-
 % correct
 \definecolor{correct}{HTML}{009900}
 \newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
@@ -69,12 +70,13 @@
 
 % si unitx
 \usepackage{siunitx}
-\sisetup{locale = FR}
+\sisetup{locale = FR} %FIXME
 % \renewcommand\vec[1]{\mathbf{#1}}
 \newcommand\mat[1]{\mathbf{#1}}
 
 
 % tikz
+% FIXME: Conflicts with todonotes (xkeyval errors)
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usetikzlibrary{intersections, angles, quotes, calc, positioning}
@@ -232,16 +234,6 @@
     \marginpar{\small\textsf{\mbox{#1 #2 #3}}}
 }
 
-\def\@lesson{}%
-\newcommand{\lesson}[3]{
-    \ifthenelse{\isempty{#3}}{%
-        \def\@lesson{Лекция #1}%
-    }{%
-        \def\@lesson{Лекция #1: #3}%
-    }%
-    \subsection*{\@lesson}
-    \testdateparts{#2}
-}
 
 % \renewcommand\date[1]{\marginpar{#1}}
 
@@ -250,8 +242,6 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
-\fancyhead[LE,RO]{Егор Коновалов}
-\fancyhead[RO,LE]{\@lesson}
 \fancyhead[RE,LO]{}
 \fancyfoot[LE,RO]{\thepage}
 \fancyfoot[C]{\leftmark}
@@ -262,15 +252,21 @@
 
 
 % notes
-% \usepackage{todonotes}
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+%\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]%{#2}}
+%\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+%\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+%\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+%\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
 \usepackage{tcolorbox}
 
 \tcbuselibrary{breakable}
-\newenvironment{verbetering}{\begin{tcolorbox}[
+\newenvironment{boxnote}{\begin{tcolorbox}[
     arc=0mm,
     colback=white,
     colframe=green!60!black,
-    title=Opmerking,
+    title=Замечание,
     fonttitle=\sffamily,
     breakable
 ]}{\end{tcolorbox}}
