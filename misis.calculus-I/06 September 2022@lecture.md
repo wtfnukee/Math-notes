@@ -4,7 +4,7 @@
 - $A \subset B$ все элементы множества А являются элементами множества В
 - $A = B \iff A \subset B$  и $B\subset A$
 - $A \cup B = \{ x: x \in A \lor \ x \in B \}$
-- $A \cap B = \{ x: x \in A \land \ x \in B \}$ множество из элементов, которые есть и в $A$, и в $B$
+- $A \cap B = \{ x: x \in A \land \ x \in B \}$ 
 - $A \setminus B = \{ x: x \in A \land x \notin B \}$
 - $\bar{A} = \Omega \setminus A$
 - $A \triangle B = (A \setminus B) \cup (B \setminus A)$
