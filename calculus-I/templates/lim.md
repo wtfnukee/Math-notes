@@ -1,1 +1,0 @@
-\lim_\limits{n \to \infty}

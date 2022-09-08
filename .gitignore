@@ -14,6 +14,7 @@ _region_.tex
 .*.lb
 
 .obsidian/*
+templates/*
 
 ## Intermediate documents:
 *.dvi
