@@ -38,7 +38,7 @@ $\Gamma_{g \: \circ f} = \set{(x,y) | \exists y \in Y: (x,y) \in \Gamma_f \land 
 
 $f: X \to Y$ инъекция, если $x_1 \ne x_2 \implies f(x_1) = f(x_2)$
 $f: X \to Y$ сюръекция, если $\forall y \exists x: f(x) = y$
-$f: X \to Y$ биекция, если $f$ и инъективна, и биективна
+$f: X \to Y$ биекция, если $f$ и инъективна, и сюръективна
 
 #Теорема 
 1. $f$ и $g$ - биекция $\implies f \circ g$ биекция
@@ -48,7 +48,7 @@ $X \ne \varnothing, G(X) = \set{f | f: X \to X - \text{биекция}}$
 $G(X)$ - группа биекций (симметрическая группа)
 $(f,g) \mapsto f \circ g$
 1. $f \circ (g \circ h) = (f \circ g) \circ h$
-2. $e \circ f = f \circ e = f$ ($e(x) = x$)
+2. $e \circ f = f \circ e = f$ ($e(x)) = x$
 3. $\forall f \ \exists f^{-1} : f \circ f^{-1} = f^{-1} \circ f = e$
 
 Группа биекций
@@ -60,7 +60,7 @@ $(G, \circ) \cong (M, \star) \iff \exists \ \text{биекция} \ f: G \to M: 
 Если $(G, \circ), G \supset H, (H, \circ)$ - группа $\implies H$ - подгруппа
 
 #Теорема Теорема Кэли
-Всякая группа изоморфна подгруппе некоторой группе биекций.
+Всякая группа изоморфна подгруппе некоторой группы биекций.
 *Доказательство*
 $(X, \star)$ и $(G(X), \circ)$
 $z \in X \mapsto f_z(x) = z \star x$ - искомый изоморфизм на подгруппу 
